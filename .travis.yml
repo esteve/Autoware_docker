@@ -1,0 +1,15 @@
+services: docker
+sudo: required
+
+language: generic
+
+matrix:
+  include:
+    - env: OS=xenial ROS_DISTRO=kinetic
+    - env: OS=xenial ROS_DISTRO=kinetic-crossbuild
+    - env: OS=trusty ROS_DISTRO=indigo
+
+script:
+  - cd ${OS}/${ROS_DISTRO}
+  - docker build -t autoware/autoware:${OS}-${ROS_DISTRO}-develop -f Dockerfile.develop .
+  - docker build -t autoware/autoware:${OS}-${ROS_DISTRO}-master -f Dockerfile.master .
