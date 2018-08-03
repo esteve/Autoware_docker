@@ -20,3 +20,90 @@ ENV LC_ALL C.UTF-8
 
 RUN rosdep init \
     && rosdep update
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    curl \
+    freeglut3-dev \
+    libarmadillo-dev \
+    libcurl4-openssl-dev \
+    libeigen3-dev \
+    libgflags-dev \
+    libgl1-mesa-dev \
+    libglew-dev \
+    libglu1-mesa-dev \
+    libgoogle-glog-dev \
+    libgtest-dev \
+    libnlopt-dev \
+    libopencv-dev \
+    libpcap0.8-dev \
+    libpcl-1.7-all \
+    libpcl-1.7-all-dev \
+    libqt5core5a \
+    libqt5gui5 \
+    libqt5opengl5 \
+    libqt5opengl5-dev \
+    libqt5widgets5 \
+    libssh2-1 \
+    libtinyxml-dev \
+    libx11-dev \
+    libxi-dev \
+    libxml2-dev \
+    libxmu-dev \
+    libyaml-cpp-dev \
+    python-flask \
+    python-serial \
+    qtbase5-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    ros-indigo-angles \
+    ros-indigo-camera-info-manager \
+    ros-indigo-catkin \
+    ros-indigo-cmake-modules \
+    ros-indigo-cv-bridge \
+    ros-indigo-diagnostic-msgs \
+    ros-indigo-diagnostic-updater \
+    ros-indigo-dynamic-reconfigure \
+    ros-indigo-geometry-msgs \
+    ros-indigo-gps-common \
+    ros-indigo-grid-map-cv \
+    ros-indigo-grid-map-msgs \
+    ros-indigo-grid-map-ros \
+    ros-indigo-image-geometry \
+    ros-indigo-image-transport \
+    ros-indigo-imu-filter-madgwick \
+    ros-indigo-imu-tools \
+    ros-indigo-jsk-recognition-msgs \
+    ros-indigo-jsk-rviz-plugins \
+    ros-indigo-message-filters \
+    ros-indigo-message-generation \
+    ros-indigo-message-runtime \
+    ros-indigo-nav-msgs \
+    ros-indigo-nlopt \
+    ros-indigo-nmea-msgs \
+    ros-indigo-nodelet \
+    ros-indigo-pcl-conversions \
+    ros-indigo-pcl-msgs \
+    ros-indigo-pcl-ros \
+    ros-indigo-pluginlib \
+    ros-indigo-rosconsole \
+    ros-indigo-roscpp \
+    ros-indigo-roslaunch \
+    ros-indigo-roslib \
+    ros-indigo-roslint \
+    ros-indigo-rospy \
+    ros-indigo-rostest \
+    ros-indigo-rosunit \
+    ros-indigo-rqt-plot \
+    ros-indigo-rviz \
+    ros-indigo-sensor-msgs \
+    ros-indigo-shape-msgs \
+    ros-indigo-sound-play \
+    ros-indigo-std-msgs \
+    ros-indigo-std-srvs \
+    ros-indigo-stereo-msgs \
+    ros-indigo-tf \
+    ros-indigo-tf2 \
+    ros-indigo-tf2-ros \
+    ros-indigo-visualization-msgs \
+    ros-indigo-xacro
